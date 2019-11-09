@@ -1,0 +1,59 @@
+{
+  "name": "kill-process",
+  "displayName": "Kill Process",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niradler/kill-process-vscode"
+  },
+  "keywords": [
+    "kill-process-vscode",
+    "vscode"
+  ],
+  "author": "Nir Adler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niradler/kill-process-vscode/issues"
+  },
+  "homepage": "https://niradler.com",
+  "publisher": "niradler",
+  "description": "Kill process.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.29.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.killPort"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.killPort",
+        "title": "Kill process by port.",
+        "args": [
+          "<port>"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "create-publisher": "vsce create-publisher niradler",
+    "publish": "vsce publish",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "dependencies": {
+    "manage-ports": "0.0.6"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.10.25",
+    "eslint": "^4.11.0",
+    "typescript": "^3.1.4",
+    "vscode": "^1.1.36"
+  }
+}
